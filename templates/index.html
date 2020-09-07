@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome</h1>
+    {{ user }}
+    {% if user.is_authenticated %}
+        ola
+        <p>
+            <a href="{% url 'employee-list' %}"> Employees </a>
+        </p>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}"> Login </a>
+        </p>
+    {% endif %}
+{% endblock %}
