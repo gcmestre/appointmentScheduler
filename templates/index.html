@@ -4,9 +4,14 @@
     <h1>Welcome</h1>
     {{ user }}
     {% if user.is_authenticated %}
-        ola
+        <p>
+            <a href="{% url 'appointment-list' %}"> Appointments </a>
+        </p>
         <p>
             <a href="{% url 'employee-list' %}"> Employees </a>
+        </p>
+        <p>
+            <a href="{% url 'client-list' %}"> Clients </a>
         </p>
     {% else %}
         <p>

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.urls import path, include, reverse
-from appointment.views import EmployeeList, EmployeeDetail, EmployeeUpdate, EmployeeCreate
+from appointment.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,13 @@ urlpatterns = [
     path('employee/<int:pk>/', EmployeeDetail.as_view(), name="employee-detail"),
     path('employee/<int:pk>/edit', EmployeeUpdate.as_view(), name="employee-update"),
     path('employee/create/', EmployeeCreate.as_view(), name="employee-create"),
+    path('client/', ClientList.as_view(), name="client-list"),
+    path('client/<int:pk>/', ClientDetail.as_view(), name="client-detail"),
+    path('client/<int:pk>/edit', ClientUpdate.as_view(), name="client-update"),
+    path('client/create/', ClientCreate.as_view(), name="client-create"),
+    path('appointment/', AppointmentList.as_view(), name="appointment-list"),
+    path('appointment/<int:pk>/', AppointmentDetail.as_view(), name="appointment-detail"),
+    path('appointment/<int:pk>/edit', AppointmentUpdate.as_view(), name="appointment-update"),
+    path('appointment/create/', AppointmentCreate.as_view(), name="appointment-create"),
     path('', TemplateView.as_view(template_name="index.html"), name="index"),
 ]

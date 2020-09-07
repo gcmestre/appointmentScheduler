@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>client</h2>
+
+    <ul>
+        <li>{{ object.name }}</li>
+        <li>{{ object.birthdate }}</li>
+        <li>{{ object.email }}</li>
+        <li>{{ object.phone_number }}</li>
+        <li>{{ object.preferred_contact_method }}</li>
+        <li>{{ object.job_title }}</li>
+    </ul>
+
+    <a href="{% url 'client-update' client.pk %}"> Edit</a>
+    <a href="{% url 'client-list' %}"> Back</a>
+
+{% endblock %}

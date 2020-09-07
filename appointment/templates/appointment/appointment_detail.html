@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>appointment</h2>
+
+    <ul>
+        <li>{{ object.employee }}</li>
+        <li>{{ object.client }}</li>
+        <li>{{ object.appoitment_type }}</li>
+        <li>{{ object.date }}</li>
+        <li>{{ object.comments }}</li>
+        <li>{{ object.payed }}</li>
+    </ul>
+
+    <a href="{% url 'appointment-update' appointment.pk %}"> Edit</a>
+    <a href="{% url 'appointment-list' %}"> Back</a>
+
+{% endblock %}
